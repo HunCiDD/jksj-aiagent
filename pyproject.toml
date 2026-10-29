@@ -1,0 +1,28 @@
+[project]
+name = "jksj-aiagent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alembic>=1.14.0",
+    "asyncpg>=0.30.0",
+    "cryptography>=43.0.0",
+    "fastapi>=0.162.0",
+    "httpx>=0.27.0",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "uvicorn>=0.30.0",
+]
+
+[dependency-groups]
+dev = [
+    "aiosqlite>=0.20.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["week01/llm-gateway/tests"]
+pythonpath = ["week01/llm-gateway"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
